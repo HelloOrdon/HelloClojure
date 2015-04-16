@@ -16,6 +16,9 @@
            (neightbours x)))
   )
 
+(defn shouldSurvive [input, x]
+  (not (nil? (in? [2,3] (neighboursCount input x))))
+  )
 (defn testfn [a]
   (str "Hello " a))
 

@@ -14,5 +14,7 @@
 (fact [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]] => (neightbours [0,0] ))
 (fact 2 => (neighboursCount [[0,0],[0,1],[1,0]] [0,1]))
 (fact 1 => (neighboursCount [[0,0],[0,1]] [0,1]))
+(fact true => (shouldSurvive [[0,0],[0,1],[1,0]] [0,1]))
+(fact false => (shouldSurvive [[0,0],[0,1]] [0,1]))
 
 ;(fact (in? (tick [[0,0],[0,1],[0,2]]) [0,0] ) => false)
