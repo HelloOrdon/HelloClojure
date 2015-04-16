@@ -19,8 +19,6 @@
 (defn shouldSurvive [input, x]
   (in? [2,3] (neighboursCount input x))
   )
-(defn testfn [a]
-  (str "Hello " a))
 
 (defn tick [input]
   (filter (fn [x]
