@@ -17,4 +17,4 @@
 (fact true => (shouldSurvive [[0,0],[0,1],[1,0]] [0,1]))
 (fact false => (shouldSurvive [[0,0],[0,1]] [0,1]))
 
-;(fact (in? (tick [[0,0],[0,1],[0,2]]) [0,0] ) => false)
+(fact (in? (tick [[0,0],[0,1],[0,2]]) [0,0] ) => false)

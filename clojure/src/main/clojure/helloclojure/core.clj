@@ -3,7 +3,7 @@
 (defn in?
   "true if seq contains elm"
   [seq elm]
-  (some #(= elm %) seq))
+  (not (nil? (some #(= elm %) seq))))
 
 (defn neightbours [[x,y]]
   (for [dx [-1,0,1] dy [-1,0,1]
@@ -17,11 +17,12 @@
   )
 
 (defn shouldSurvive [input, x]
-  (not (nil? (in? [2,3] (neighboursCount input x))))
+  (in? [2,3] (neighboursCount input x))
   )
 (defn testfn [a]
   (str "Hello " a))
 
 (defn tick [input]
-  (if (> (count input) 1) input [])
+  (filter (fn [x]
+            (shouldSurvive input x)) input)
   )
