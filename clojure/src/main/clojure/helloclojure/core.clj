@@ -29,7 +29,7 @@
   (distinct (apply concat (map neightbours input))))
 
 (defn emerged [input]
-  (posibleToEmerge input))
+  (filter (fn [x] (shouldEmerge input x)) (posibleToEmerge input)))
 
 (defn tick [input]
   (distinct (concat (survived input) []));(emerged input)
