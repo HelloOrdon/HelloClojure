@@ -7,12 +7,18 @@
 
 (defn neightbours [[x,y]]
   (for [dx [-1,0,1] dy [-1,0,1]
-    :when (not= dx dy 0)]
+        :when (not= dx dy 0)]
     [(+ x dx) (+ y dy)]))
+
+(defn neighboursCount [input, x]
+  (count (filter (fn [neighbour]
+                   (in? input neighbour))
+           (neightbours x)))
+  )
 
 (defn testfn [a]
   (str "Hello " a))
 
 (defn tick [x]
-  (if (> (count x) 1) x [] )
+  (if (> (count x) 1) x [])
   )
