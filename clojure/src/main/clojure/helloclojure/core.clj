@@ -20,7 +20,11 @@
   (in? [2,3] (neighboursCount input x))
   )
 
+(defn survived [input]
+  (filter (fn [x] (shouldSurvive input x)) input))
+
+(defn emerged [input] [])
+
 (defn tick [input]
-  (filter (fn [x]
-            (shouldSurvive input x)) input)
+  (distinct (concat (survived input) (emerged input)))
   )
