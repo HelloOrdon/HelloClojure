@@ -6,9 +6,9 @@
   (some #(= elm %) seq))
 
 (defn neightbours [[x,y]]
-  (for [dx [0,1,2] dy [0,1,2]
-    :when (not= dx dy 1)]
-    [dx dy]))
+  (for [dx [-1,0,1] dy [-1,0,1]
+    :when (not= dx dy 0)]
+    [(+ x dx) (+ y dy)]))
 
 (defn testfn [a]
   (str "Hello " a))
