@@ -5,6 +5,11 @@
   [seq elm]
   (some #(= elm %) seq))
 
+(defn neightbours [[x,y]]
+  (for [dx [0,1,2] dy [0,1,2]
+    :when (not= dx dy 1)]
+    [dx dy]))
+
 (defn testfn [a]
   (str "Hello " a))
 
