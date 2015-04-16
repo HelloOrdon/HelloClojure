@@ -17,12 +17,10 @@
   )
 
 (defn shouldSurvive [input, x]
-  (in? [2,3] (neighboursCount input x))
-  )
+  (in? [2,3] (neighboursCount input x)))
 
 (defn shouldEmerge [input, x]
-  (in? [3] (neighboursCount input x))
-  )
+  (in? [3] (neighboursCount input x)))
 
 (defn survived [input]
   (filter (fn [x] (shouldSurvive input x)) input))
@@ -31,8 +29,8 @@
   (distinct (apply concat (map neightbours input))))
 
 (defn emerged [input]
-  [])
+  (posibleToEmerge input))
 
 (defn tick [input]
-  (distinct (concat (survived input) (emerged input)))
+  (distinct (concat (survived input) []));(emerged input)
   )
