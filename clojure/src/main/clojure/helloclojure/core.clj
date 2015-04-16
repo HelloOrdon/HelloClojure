@@ -19,6 +19,6 @@
 (defn testfn [a]
   (str "Hello " a))
 
-(defn tick [x]
-  (if (> (count x) 1) x [])
+(defn tick [input]
+  (if (> (count input) 1) input [])
   )
