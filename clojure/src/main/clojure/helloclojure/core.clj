@@ -32,5 +32,5 @@
   (filter (fn [x] (shouldEmerge input x)) (posibleToEmerge input)))
 
 (defn tick [input]
-  (distinct (concat (survived input) []));(emerged input)
+  (distinct (concat (survived input) (emerged input)))
   )
